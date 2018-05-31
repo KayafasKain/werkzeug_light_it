@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}Create New Short URL{% endblock %}
+{% block body %}
+  <h2>Main page</h2>
+  <form action="/create_add" method=get>
+    <input type=submit value="Add Advertise">
+  </form>
+
+    {% for ad in ads %}
+      <div class = "add-block">
+          <span>{{ ad[1] }}</span>
+          <a href="/board:{{ ad[0] }}">detail...</a>
+      </div>
+    {% endfor %}
+
+{% endblock %}

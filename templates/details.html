@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}Create New Short URL{% endblock %}
+{% block body %}
+
+
+    <article>
+        <head>created by:<h3>{{ detailed_info.creator }}</h3></head>
+        <section>
+            {{ detailed_info.text }}
+        </section>
+        <span>created at: {{ detailed_info.time }}</span>
+    </article>
+
+    <a href="/comment:{{ detailed_info.board_id }}">add comment</a>
+    <h4>Comments:</h4>
+    <div>
+        {% for comment in comments %}
+            <div>
+                <h5>{{ comment.creator }}</h5>
+                <span class="comment">{{ comment.comment }}</span>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

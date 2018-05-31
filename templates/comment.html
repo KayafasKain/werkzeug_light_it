@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}Create New Short URL{% endblock %}
+{% block body %}
+
+    <form action="" method=post>
+        {% if error %}
+            <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+        <p>creator:
+        <input type=text name=creator value="{{ creator }}" class=urlinput>
+        <p>comment:
+        <input type=text name=comment value="{{ comment }}" class=urlinput>
+
+        <input type=submit value="submit">
+    </form>
+
+{% endblock %}
